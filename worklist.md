@@ -169,7 +169,13 @@ HOME ─ 마이대시보드 → 프로젝트 목록 → 프로젝트 상세
 - [ ] 실시간 기능(위임 토스트 등) 연동
 - [ ] 통합 QA
 
-## 7. 실행 방법
+## 7. Git
+
+- 저장소 범위: `teamkit/app`만 (레퍼런스 이미지 등 `teamkit` 상위 폴더는 git 관리 대상 아님)
+- 원격: https://github.com/yuna950/teamkit.git (Public), 기본 브랜치 `main`
+- 다른 컴퓨터에서 이어서 작업하려면: `git clone https://github.com/yuna950/teamkit.git app` 후 `cd app && npm install`
+
+## 8. 실행 방법
 
 ```
 cd teamkit/app
@@ -177,7 +183,7 @@ npm install   # 최초 1회 또는 새 컴퓨터에서
 npm run dev   # 개발 서버 실행 (기본 http://localhost:5173)
 ```
 
-## 8. 개발 중 화면 확인 방법 (중요)
+## 9. 개발 중 화면 확인 방법 (중요)
 
 이제 로그인/회원가입이 실제로(로컬 mock 인증으로) 동작함. `/projects`, `/my-page`, `/projects/:id/*`는 로그인해야 접근 가능.
 
@@ -188,7 +194,7 @@ npm run dev   # 개발 서버 실행 (기본 http://localhost:5173)
 - 새로 만든 UI 컴포넌트 모음: `/dev/ui-kit`
 - `DevNav`(`src/dev/DevNav.tsx`)와 `/dev/ui-kit`은 실제 페이지들이 다 완성되면(Phase 3~4) 제거할 임시 개발용 화면
 
-## 9. 업데이트 내역
+## 10. 업데이트 내역
 
 - 2026-09-23: 기획/IA/와이어프레임/스타일가이드 이해 완료, 라우트 구조 확정, Phase 1(프로젝트 뼈대) 완료.
 - 2026-09-23: Phase 2(공통 디자인 시스템 컴포넌트) 완료. 인증/네비게이션이 아직 없어 화면 확인이 어렵다는 피드백으로 임시 DEV 이동 바(`DevNav`)와 컴포넌트 데모 페이지(`/dev/ui-kit`) 추가.
@@ -204,3 +210,4 @@ npm run dev   # 개발 서버 실행 (기본 http://localhost:5173)
 - 2026-09-23: Step 3-③(사이드바 하단 사용자 이름) 완료 — `ProjectLayout` 사이드바 하단에 `useAuth()`로 로그인한 사용자 아바타+이름 표시(와이어프레임 반영).
 - 2026-09-23: Step 3-④(잘못된 프로젝트 ID 처리) 완료 — `ProjectLayout`에서 URL의 `:projectId`가 `ProjectsContext`에 없으면 `/projects`로 즉시 리다이렉트. **Step 3(프로젝트 상세 공통 레이아웃) 전체 완료.**
 - 2026-09-23: Step 4(대시보드 탭) 완료 — `MaterialsContext`/`ChecklistContext` 신규 생성(프로젝트 1번에 더미 자료·체크리스트 시드), `ProjectDashboardPage`에서 체크리스트 요약(공통/개인, 완료 토글 동작)과 고정된 자료 목록 렌더링.
+- 2026-09-23: `teamkit/app`을 git 저장소로 초기화하고 GitHub(https://github.com/yuna950/teamkit.git, Public)에 연결, 첫 커밋 푸시 완료.
